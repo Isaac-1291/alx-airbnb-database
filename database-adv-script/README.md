@@ -1,12 +1,25 @@
 # Join Queries – Airbnb Clone Database
 
-This script contains SQL queries to demonstrate usage of different types of joins:
+This directory contains SQL queries demonstrating various types of `JOIN` operations using a sample Airbnb clone database.
 
-- `INNER JOIN` to get bookings and their users
-- `LEFT JOIN` to list all properties and their reviews (including those with none)
-- `FULL OUTER JOIN` to combine all users and all bookings
+## Objectives
 
-Used in ALX Intermediate Backend Project.
-# SQL Join Queries
+- Write an `INNER JOIN` query to retrieve all bookings and the users who made them.
+- Use a `LEFT JOIN` to retrieve all properties and their reviews, including properties without reviews.
+- Use a simulated `FULL OUTER JOIN` (with `UNION`) to retrieve all users and all bookings, even if not linked.
 
-This directory contains SQL queries demonstrating different types of JOIN operations used in relational databases.
+## Files
+
+- `joins_queries.sql` – Contains all the SQL JOIN queries.
+- `README.md` – This file.
+
+## JOIN Types Covered
+
+### 1. INNER JOIN
+Returns records that have matching values in both tables.
+
+### 2. LEFT JOIN
+Returns all records from the left table and matched records from the right table. Unmatched right table fields will be NULL.
+
+### 3. FULL OUTER JOIN (Simulated)
+Since MySQL doesn't support `FULL OUTER JOIN`, a combination of `LEFT JOIN` and `RIGHT JOIN` via `UNION` is used to simulate it.
