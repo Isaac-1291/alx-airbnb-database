@@ -1,4 +1,4 @@
--- Initial query to retrieve bookings with user, property, and payment details
+-- Initial complex query with WHERE and AND
 SELECT
   bookings.id AS booking_id,
   users.name AS user_name,
@@ -8,7 +8,8 @@ SELECT
 FROM bookings
 JOIN users ON bookings.user_id = users.id
 JOIN properties ON bookings.property_id = properties.id
-JOIN payments ON bookings.id = payments.booking_id;
+JOIN payments ON bookings.id = payments.booking_id
+WHERE payments.amount > 100 AND users.country = 'USA';
 
 -- Analyze performance
 EXPLAIN SELECT
@@ -20,4 +21,5 @@ EXPLAIN SELECT
 FROM bookings
 JOIN users ON bookings.user_id = users.id
 JOIN properties ON bookings.property_id = properties.id
-JOIN payments ON bookings.id = payments.booking_id;
+JOIN payments ON bookings.id = payments.booking_id
+WHERE payments.amount > 100 AND users.country = 'USA';
