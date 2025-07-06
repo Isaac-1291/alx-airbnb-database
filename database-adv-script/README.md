@@ -7,3 +7,6 @@ This script contains SQL queries to demonstrate usage of different types of join
 - `FULL OUTER JOIN` to combine all users and all bookings
 
 Used in ALX Intermediate Backend Project.
+# SQL Join Queries
+
+This directory contains SQL queries demonstrating different types of JOIN operations used in relational databases.
