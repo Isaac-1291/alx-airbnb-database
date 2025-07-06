@@ -10,5 +10,5 @@ CREATE INDEX idx_bookings_start_date ON bookings(start_date);
 -- Create index on properties.name to speed up property name lookups
 CREATE INDEX idx_properties_name ON properties(name);
 
--- Analyze performance before and after indexing
-EXPLAIN SELECT * FROM bookings WHERE user_id = 3;
+-- Measure performance using EXPLAIN ANALYZE
+EXPLAIN ANALYZE SELECT * FROM bookings WHERE user_id = 3;
