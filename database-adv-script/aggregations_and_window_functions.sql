@@ -5,8 +5,8 @@ JOIN bookings ON users.id = bookings.user_id
 GROUP BY users.id, users.name
 ORDER BY total_bookings DESC;
 
--- 2. Rank properties by total number of bookings
+-- 2. Rank properties using ROW_NUMBER based on total number of bookings
 SELECT property_id, COUNT(*) AS total_bookings,
-       RANK() OVER (ORDER BY COUNT(*) DESC) AS rank
+       ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS rank
 FROM bookings
 GROUP BY property_id;
