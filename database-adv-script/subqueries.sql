@@ -1,5 +1,5 @@
--- 1. Find all properties where the average rating is greater than 4.0
-SELECT *
+-- 1. Non-correlated subquery: Properties with average rating > 4.0
+SELECT id, name
 FROM properties
 WHERE id IN (
     SELECT property_id
@@ -8,11 +8,11 @@ WHERE id IN (
     HAVING AVG(rating) > 4.0
 );
 
--- 2. Find users who have made more than 3 bookings (correlated subquery)
-SELECT *
-FROM users u
+-- 2. Correlated subquery: Users who have made more than 3 bookings
+SELECT id, name
+FROM users
 WHERE (
     SELECT COUNT(*)
-    FROM bookings b
-    WHERE b.user_id = u.id
+    FROM bookings
+    WHERE bookings.user_id = users.id
 ) > 3;

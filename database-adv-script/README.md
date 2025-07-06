@@ -23,3 +23,9 @@ Returns all records from the left table and matched records from the right table
 
 ### 3. FULL OUTER JOIN (Simulated)
 Since MySQL doesn't support `FULL OUTER JOIN`, a combination of `LEFT JOIN` and `RIGHT JOIN` via `UNION` is used to simulate it.
+
+# Subqueries
+
+This script contains:
+- A subquery to find properties with average rating > 4.0.
+- A correlated subquery to list users who have made more than 3 bookings.
